@@ -1,6 +1,17 @@
 # Research Diary: Week 23 January 2023 - 27 January 2023 #
 
-## Entry: 23 January 2023 #
+## Entry: 24 January 2023 - Tuesday ##
+
+I have now managed to execute the PMVS system against data. Here are my findings: 
+* A single-pixel approach is speedy and allows me to quickly process many images and retrieve some "fine" thin image elements.
+* Multiple images make this smoother - but I still have noisy depth maps in homogenous regions.
+* I still have occlusion noise, and distant scene elements are not outstanding.
+* I designed the system to learn depth along with a color model. I found that this did not work very well - because the system tended to find some compromise between color and depth that was unrealistic. Adding color gives the system too many "degrees of freedom."
+* Without color, I matched a single frame within the system. This is not really what I intended initially.
+
+I am currently in the process of designing PMVS2 - Which I am calling DMap (COLMAP for depth maps)
+
+## Entry: 23 January 2023 - Monday ##
 
 On Friday, I threw together a quick concept implementation of PMVS. In hindsight, I should have built up the system in pieces and tested each component with unit tests - rather than having a complex system as a whole to evaluate. 
 
